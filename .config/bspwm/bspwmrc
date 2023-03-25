@@ -1,0 +1,50 @@
+#! /bin/sh
+
+export GDK_SCALE=2
+#export GDK_DPI_SCALE=0.5
+export QT_SCALE_FACTOR=1.35
+export QT_FONT_DPI=96
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# keyboard shortcuts
+killall sxhkd
+sxhkd &
+
+# bar
+killall polybar
+polybar top &
+
+# wallpaper
+nitrogen --restore
+
+# compositor
+#picom &
+
+# system utilities
+killall udiskie
+udiskie -ant &
+killall nm-applet
+nm-applet &
+killall blueman-applet
+blueman-applet &
+
+# bspwm options
+bspc monitor -d I II III IV V VI VII 
+
+bspc config border_width         2
+bspc config window_gap          4
+bspc config border_radius 10
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config directional_focus_tightness low
+
+bspc rule -a kotatogram-desktop desktop=^2
+bspc rule -a *:*:splash state=floating
+
+setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:win_space_toggle
+xsetroot -cursor_name left_ptr &
