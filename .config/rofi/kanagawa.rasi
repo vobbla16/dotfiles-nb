@@ -6,10 +6,10 @@ configuration {
 }
 
 * {
-  transparent: #00000000;
-	bg:				#3c3836;
-	fg:				#d5c4a1;
-	button:				#665c54;
+	transparent: #00000000;
+	bg:				#16161D;
+	fg:				#DCD7BA;
+	button:				#54546D;
 
 	background-color:		@bg;
 	text-color:			@fg;
