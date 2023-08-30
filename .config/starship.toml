@@ -1,34 +1,45 @@
 format = """ 
-$directory$sudo$character
+$username $directory $git_branch $git_state $git_status $cmd_duration\
+$line_break\
+$character
 """
 
 right_format = """
-$all$cmd_duration $time
+$docker_context
+$time\
+$line_break
 """
+
+add_newline = true
 
 [directory]
 style="blue bold"
-format='\[[$path]($style)\]'
-truncation_length = 5
+format='[$path]($style)'
+truncation_length = 13
 truncation_symbol = "../"
 
 [time]
 disabled=false
 time_format = "%H:%M:%S"
-style = "italic"
-format = " [$time]($style) "
+style = "bright-white italic"
+format = "[$time]($style)"
 
 [cmd_duration]
 min_time=1
 show_milliseconds=true
 style="bold yellow"
-format=" [$duration]($style)"
+format="took [$duration]($style)"
 
 [character]
 success_symbol="[>](bold green)"
 error_symbol="[>](bold red)"
 
-[sudo]
-disabled=false
-format="[$symbol](green)"
-symbol='S'
+[username]
+show_always=true
+style_user="green"
+style_root="red bold"
+format = "[@$user]($style)"
+
+[docker_context]
+style = "blue"
+format = "[$context]($style) $path"

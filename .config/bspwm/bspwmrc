@@ -21,7 +21,7 @@ polybar top &
 nitrogen --restore
 
 # compositor
-#picom &
+picom &
 
 # system utilities
 killall udiskie
@@ -30,13 +30,13 @@ killall nm-applet
 nm-applet &
 killall blueman-applet
 blueman-applet &
+dunst &
 
 # bspwm options
 bspc monitor -d I II III IV V VI VII 
 
 bspc config border_width         2
-bspc config window_gap          4
-bspc config border_radius 10
+bspc config window_gap          3
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
@@ -48,3 +48,4 @@ bspc rule -a *:*:splash state=floating
 
 setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:win_space_toggle
 xsetroot -cursor_name left_ptr &
+

@@ -25,7 +25,7 @@ XF86MonBrightness{Up,Down}
 Print
 	~/.scripts/screenshot.sh --area
 
-alt + Print
+super + shift + alt + l
 	~/.scripts/screenshot.sh --screen
 
 # quit/restart bspwm

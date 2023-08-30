@@ -62,3 +62,5 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+source /home/vobbla16/.config/broot/launcher/bash/br
